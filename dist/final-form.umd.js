@@ -1213,13 +1213,13 @@
 
           if (lastOne) {
             delete state.fieldSubscribers[name];
-            delete state.fields[name];
 
             if (validatorRemoved) {
               state.formState.errors = setIn(state.formState.errors, name, undefined) || {};
             }
 
             if (destroyOnUnregister) {
+              delete state.fields[name];
               state.formState.values = setIn(state.formState.values, name, undefined, true) || {};
             }
           }
